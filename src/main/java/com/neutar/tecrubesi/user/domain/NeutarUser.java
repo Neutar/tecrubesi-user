@@ -3,10 +3,7 @@ package com.neutar.tecrubesi.user.domain;
 import com.neutar.tecrubesi.user.dto.NeutarUserUpdateDto;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.UUID;
@@ -38,7 +35,7 @@ public class NeutarUser {
     @NotBlank(message = "Password is mandatory")
     private String password;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private NeutarUserDetail neutarUserDetail;
 
     public void addPointsToUser(Long points){

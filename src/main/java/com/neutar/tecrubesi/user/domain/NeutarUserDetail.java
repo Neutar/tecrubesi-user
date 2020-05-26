@@ -4,6 +4,7 @@ import com.neutar.tecrubesi.user.dto.NeutarUserUpdateDto;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,7 +30,8 @@ public class NeutarUserDetail {
     @ElementCollection(targetClass=Badge.class)
     @CollectionTable(name="user_detail_badge")
     @Column(name="badge")
-    private List<Badge> badgeList;
+    @Builder.Default
+    private List<Badge> badgeList = new ArrayList<>();
 
     public void addPointsToUser(Long points) {
         this.points+=points;
