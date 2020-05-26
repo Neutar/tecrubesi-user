@@ -17,7 +17,8 @@ spring:
   flyway:
     schemas: neutar_user
   kafka:
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    listener:
+      missing-topics-fatal: false
+kafka:
+  bootstrap-servers: localhost:9092
+  groupId: neutar_user

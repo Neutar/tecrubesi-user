@@ -1,12 +1,13 @@
 package com.neutar.tecrubesi.user.dto.event;
 
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
 
 import java.util.UUID;
 
-@Value
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class NeutarUserUpdatedUserDetailEvent implements NeutarUserEvent{
     private String profilePictureUrl;
 

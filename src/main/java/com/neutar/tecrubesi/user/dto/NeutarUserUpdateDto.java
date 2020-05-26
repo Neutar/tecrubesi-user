@@ -1,10 +1,8 @@
 package com.neutar.tecrubesi.user.dto;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Value;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Value
