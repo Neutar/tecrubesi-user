@@ -2,6 +2,7 @@ package com.neutar.tecrubesi.user.domain;
 
 import com.neutar.tecrubesi.user.dto.NeutarUserUpdateDto;
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
