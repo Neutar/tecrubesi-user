@@ -47,7 +47,7 @@ public class NeutarUser {
         neutarUserDetail.addBadgeToUser(badge);
     }
 
-    public void updateUserDetail(NeutarUserUpdateDto userUpdateDto){
+    public void updateUser(NeutarUserUpdateDto userUpdateDto){
         this.name = userUpdateDto.getName();
         this.surname = userUpdateDto.getSurname();
         this.username = userUpdateDto.getUsername();
