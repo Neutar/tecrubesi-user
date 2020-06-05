@@ -25,7 +25,7 @@ public class NeutarUserController {
         log.info("User created..");
     }
 
-    @PutMapping("/update-user-detail/{userId}")
+    @PutMapping("/{userId}/update-user-detail")
     public void updateUserDetail(@PathVariable UUID userId, @NotNull @Valid @RequestBody NeutarUserUpdateDto
             neutarUserUpdateDto) {
         log.info("updateUserDetail called with userId={} neutarUserUpdateDto={}", userId, neutarUserUpdateDto);
