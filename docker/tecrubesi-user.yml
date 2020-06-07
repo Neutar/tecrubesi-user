@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  tecrubesi-user:
+    image: "tecrubesi-user:latest"
+    ports:
+      - "8082:8082"
+    environment:
+      - "DB_HOST=postgres_db"
+      - "EUREKA_URI=http://cloud-discovery:8761/eureka"
+      - "KAFKA_HOST=kafka"
+      - "SERVER_PORT=8082"

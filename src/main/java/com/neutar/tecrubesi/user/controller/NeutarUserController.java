@@ -1,5 +1,7 @@
 package com.neutar.tecrubesi.user.controller;
 
+import com.netflix.discovery.EurekaClient;
+import com.netflix.discovery.shared.Application;
 import com.neutar.tecrubesi.user.dto.NeutarUserCreateDto;
 import com.neutar.tecrubesi.user.dto.NeutarUserUpdateDto;
 import com.neutar.tecrubesi.user.service.NeutarUserService;
@@ -17,6 +19,7 @@ import java.util.UUID;
 @Slf4j
 public class NeutarUserController {
     private final NeutarUserService neutarUserService;
+    private final EurekaClient eurekaClient;
 
     @PostMapping("/register")
     public void registerUser(@NotNull @Valid @RequestBody NeutarUserCreateDto neutarUserCreateDto) {
