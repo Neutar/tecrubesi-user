@@ -36,4 +36,9 @@ public class NeutarUserController {
         log.info("User detail updated..");
     }
 
+    @GetMapping("/{userId}/topic")
+    public Application test(){
+        return eurekaClient.getApplication("tecrubesi-topic");
+    }
+
 }
