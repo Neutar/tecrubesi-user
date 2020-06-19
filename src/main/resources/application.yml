@@ -31,7 +31,7 @@ security:
   oauth2:
     resource:
       jwt:
-        key-value: neutar
+        key-value: ${JWT_KEY_VALUE:neutar}
 kafka:
   bootstrap-servers: ${KAFKA_HOST:localhost}:9092
   groupId: neutar_user
