@@ -27,6 +27,11 @@ spring:
   kafka:
     listener:
       missing-topics-fatal: false
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: neutar
 kafka:
   bootstrap-servers: ${KAFKA_HOST:localhost}:9092
   groupId: neutar_user

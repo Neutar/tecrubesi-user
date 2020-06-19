@@ -7,6 +7,8 @@ import com.neutar.tecrubesi.user.dto.NeutarUserUpdateDto;
 import com.neutar.tecrubesi.user.service.NeutarUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -36,9 +38,10 @@ public class NeutarUserController {
         log.info("User detail updated..");
     }
 
-    @GetMapping("/{userId}/topic")
-    public Application test(){
-        return eurekaClient.getApplication("tecrubesi-topic");
+    @RequestMapping("/profile")
+    @PreAuthorize("#oauth2.hasAnyScope('read')")
+    public @ResponseBody String getOauth2Principal(OAuth2Authentication auth) {
+        return "Access granted for " + auth.getPrincipal();
     }
 
 }
