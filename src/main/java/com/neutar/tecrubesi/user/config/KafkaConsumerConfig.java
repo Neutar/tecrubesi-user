@@ -45,6 +45,7 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory);
         return factory;
     }
+
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, NeutarUserGainedBadgeEvent> kafkaUserGainedBadgeListenerContainerFactory(ConsumerFactory<String, NeutarUserGainedBadgeEvent> consumerFactory) {
         ConcurrentKafkaListenerContainerFactory<String, NeutarUserGainedBadgeEvent> factory = new ConcurrentKafkaListenerContainerFactory<>();

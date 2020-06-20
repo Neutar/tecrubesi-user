@@ -62,7 +62,7 @@ class NeutarUserTest {
                 .bio("bio2")
                 .profilePictureUrl("url")
                 .build();
-        neutarUser.updateUserDetail(neutarUserUpdateDto);
+        neutarUser.updateUser(neutarUserUpdateDto);
         assertEquals("Mehmet", neutarUser.getName());
         assertEquals("Turk", neutarUser.getSurname());
         assertEquals("mturk", neutarUser.getUsername());

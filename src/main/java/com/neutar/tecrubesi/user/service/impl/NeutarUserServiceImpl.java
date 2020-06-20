@@ -56,7 +56,7 @@ public class NeutarUserServiceImpl implements NeutarUserService {
     @Transactional
     public void updateUserDetail(UUID userId, NeutarUserUpdateDto userUpdateDto) {
         NeutarUser user = getNeutarUserOrThrow(userId);
-        user.updateUserDetail(userUpdateDto);
+        user.updateUser(userUpdateDto);
         neutarUserRepository.save(user);
         applicationEventPublisher.publishEvent(NeutarUserUpdatedUserDetailEvent.builder()
                 .bio(user.getNeutarUserDetail().getBio())

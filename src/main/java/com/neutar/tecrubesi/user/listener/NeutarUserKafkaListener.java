@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NeutarUserKafkaListener {
-    @KafkaListener(topics = "tecrubesi.user.gained-point.v0", groupId = "neutar_user", containerFactory = "kafkaUserGainedPointListenerContainerFactory")
+    @KafkaListener(topics = "tecrubesi.user.gained-point.v0", groupId = "tecrubesi_user", containerFactory = "kafkaUserGainedPointListenerContainerFactory")
     public void listenPoints(NeutarUserGainedPointEvent neutarUserGainedPointEvent) {
         System.out.println("Received Messasge in group neutar_user: " + neutarUserGainedPointEvent);
     }
 
-    @KafkaListener(topics = "tecrubesi.user.gained-badge.v0", groupId = "neutar_user", containerFactory = "kafkaUserGainedBadgeListenerContainerFactory")
+    @KafkaListener(topics = "tecrubesi.user.gained-badge.v0", groupId = "tecrubesi_user", containerFactory = "kafkaUserGainedBadgeListenerContainerFactory")
     public void listenBadges(NeutarUserGainedBadgeEvent neutarUserGainedBadgeEvent) {
         System.out.println("Received Messasge in group neutar_user: " + neutarUserGainedBadgeEvent);
     }
